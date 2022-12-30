@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+<div class="col-4">
+    <form action="/login" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="enter-form" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="enter-form" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <button class="submit-btn" type="submit">Log In</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,6 +1,54 @@
-.blank
+.btn
 {
-    height: 300px;
+    text-align: center;
+}
+
+.enter-form
+{
+    background-color: white;
+    border-color: rgb(235, 189, 21);
+    border-radius: 100px;
+    border-width: 1px;
+    border-style: solid;
+    height: 40px;
+    margin-left: 20px;
+    outline: none;
+    padding: .375rem .75rem;
+    width: 200px;
+}
+
+.enter-form:focus
+{
+    border-color: rgb(235, 189, 21);
+    border-width: 2px;
+}
+
+.logout-btn
+{
+    background-color: white;
+    border-color:rgb(234, 148, 20);
+    border-radius: 100px;
+    border-width: 1px;
+    border-style: solid;
+    color:rgb(234, 148, 20);
+    height: 40px;
+    width: 100px;
+}
+
+.nav-link
+{
+    color:rgb(235, 189, 21);
+}
+
+.nav-link:hover
+{
+    color: rgb(234, 148, 20);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link 
+{
+    color: #fff;
+    background-color: rgb(234, 148, 20);
 }
 
 .portal
@@ -15,22 +63,48 @@
     background-color: transparent;
     border-color: rgb(235, 189, 21);
     border-radius: 100px;
+    border-width: 1px;
     border-style: solid;
     color: rgb(235, 189, 21);
-    font-size: larger;
+    font-size: 23px;
     height: 60px;
-    margin-left: 30px;
-    width: 200px;
+    margin-left: 20px;
+    width: 230px;
 }
 
-.portal-btn:hover
+.portal-btn:hover, .submit-btn:hover, .logout-btn:hover
 {
     background-color: rgb(235, 189, 21);
     border-color: rgb(235, 189, 21);
     color: white;
 }
 
-.portal-btn:active
+.portal-btn:active, .submit-btn:active, .logout-btn:active
 {
     opacity: 0.7;
+}
+
+.right-bottom-box
+{
+    bottom: 5%;
+    position: fixed;
+    right: 3%;
+}
+
+.submit-btn
+{
+    background-color: white;
+    border-color: rgb(235, 189, 21);
+    border-radius: 100px;
+    border-width: 1px;
+    border-style: solid;
+    color: rgb(235, 189, 21);
+    height: 40px;
+    margin-left: 20px;
+    width: 200px;
+}
+
+input:-ms-input-placeholder
+{
+    color: rgb(235, 189, 21); 
 }

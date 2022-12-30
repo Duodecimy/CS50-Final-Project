@@ -15,61 +15,64 @@
 
         <link href="/static/styles.css" rel="stylesheet">
 
-        <title>Record: {% block title %}Portal{% endblock %}</title>
+        <title>{% block title %}Portal{% endblock %}</title>
     </head>
 
     <!-- log in -->
     {% if session["user_id"] %}
     <body>
 
+        
         <nav class="bg-light border navbar navbar-expand-md navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                    <img width="30" height="30" class="d-inline-block align-text-top" src="../static/pencil.png">
-                    Record
-                </a>
-                
-                <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar">
-                    
-                        <ul class="navbar-nav me-auto mt-2">
-                            <li class="nav-item"><a class="nav-link active" href="/add">Add</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/course">Course</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/diary">Diary</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/notes">Notes</a></li>
-                        </ul>
-                        <ul class="navbar-nav ms-auto mt-2">
-                            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
-                        </ul>
-                    
-                </div>
+                <a class="navbar-brand" href="/home">Record Life</span></a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/diary">Diary</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/notes">Notes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/add">Add</a>
+                    </li>
+                  </ul>
             </div>
         </nav>
+
+        <div class="right-bottom-box">
+            <a href="/logout">
+                <button class="logout-btn">Log Out</button>
+            </a>
+        </div>
+
+        {% block home %}
+            
+        {% endblock %}
+
+        
         
     </body>
 
     <!-- Before log in -->
     {% else %}
 
-    <body class="portal">
-
-        
+    <body class="portal"> 
         <div class="container">
             <div class="columns">
+                <div style="height: 250px;"></div>
                 {% block main %}
-                <div class="blank"></div>
-
                 <div class="col-4">
-                    <a class="nav-link" href="/register">
+                    <a href="/register">
                         <button type="button" class="portal-btn">Register</button>
                     </a>
-                    <a class="nav-link" href="/register">
+                    <div style="height: 30px"></div>
+                    <a href="/login">
                         <button type="button" class="portal-btn">Log In</button>
                     </a>
                 </div>
                 {% endblock %}
+                
             </div>
         </div>
         
