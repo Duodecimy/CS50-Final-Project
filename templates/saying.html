@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Diary
+    Saying
 {% endblock %}
 
 {% block home %}
 
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Yaho!</strong> Here is the Diary page!
+        <strong>Yaho!</strong> Here is the Saying page!
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
@@ -20,8 +20,10 @@
                         {{ record['date'] }}
                     </div>
                     <div class="card-body">
-                        <h5 style="text-align: center;">{{ record['title'] }}</h5>
+                        <blockquote class="blockquote mb-0">
                         <p>{{ record['content'] }}</p>
+                        <footer class="blockquote-footer">{{ record['title'] }}</footer>
+                        </blockquote>
                     </div>
                 </div>
                 {% endfor %}
