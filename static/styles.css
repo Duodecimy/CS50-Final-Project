@@ -3,14 +3,13 @@
     margin-bottom: 0rem;
 }
 
-.btn
+.btn-warning, .btn-warning:hover, .btn-warning:focus, .btn-warning:active
 {
-    text-align: center;
-    background-color:rgb(235, 200, 71);
     color: white;
 }
 
-.col-center-block {
+.col-center-block
+{
     float: none;
     display: block;
     margin-left: auto;
@@ -37,6 +36,12 @@
     border-width: 2px;
 }
 
+.form-control:focus, .form-select:focus, .submit-btn:active
+{
+    border-color: rgb(235, 200, 71);
+    box-shadow: 0 0 0 0.2rem rgb(236, 225, 167);
+}
+
 .logout-btn
 {
     background-color: white;
@@ -51,17 +56,16 @@
 
 .nav-link
 {
-    color:rgb(235, 189, 21);
+    color: rgb(235, 189, 21);
 }
 
-.nav-link:hover
+.nav-link:hover, .nav-link:focus
 {
     color: rgb(234, 148, 20);
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link 
 {
-    color: #fff;
     background-color: rgb(234, 148, 20);
 }
 
@@ -116,9 +120,4 @@
     height: 40px;
     margin-left: 20px;
     width: 200px;
-}
-
-input:-ms-input-placeholder
-{
-    color: rgb(235, 189, 21); 
 }

@@ -103,9 +103,11 @@ def add():
     tag = request.form.get('tag')
     content = request.form.get('content')
 
-    record = Record(title=title, tag=tag, content=content)
-    db.session.add(record)
-    db.session.commit()
+    # The information is completed
+    if title and tag and content:
+        record = Record(title=title, tag=tag, content=content)
+        db.session.add(record)
+        db.session.commit()
     return render_template("add.html")
 
 @app.route('/diary')
