@@ -17,7 +17,7 @@
                 {% for record in records %}
                 <div class="card border-warning"  style="margin-top: 1rem">
                     <div class="card-header">
-                        {{ record['date'] }}
+                        {{ record['create_at'] | schetime}}
                     </div>
                     <div class="card-body">
                         <h5 style="text-align: center;">{{ record['title'] }}</h5>

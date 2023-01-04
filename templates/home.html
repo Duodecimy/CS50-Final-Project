@@ -27,7 +27,7 @@
                     <tbody>
                         {% for record in records %}
                         <tr>
-                            <th>{{ record['date'] }}</th>
+                            <th>{{ record['create_at'] | schetime }}</th>
                             <th>{{ record['title'] }}</th>
                             <th>{{ record['tag'] }}</th>
                             <th>

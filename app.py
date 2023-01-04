@@ -1,19 +1,21 @@
 import os
 
-from datetime import datetime
 import click
+from datetime import datetime
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_sqlalchemy import SQLAlchemy
-from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import login_required
+from helpers import schetime
 
 # Configure application
 app = Flask(__name__)
 
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
+
+# Custom filter
+app.jinja_env.filters["schetime"] = schetime
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
@@ -28,10 +30,10 @@ db = SQLAlchemy(app)
 
 class Record(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    date = db.Column(db.DateTime(), default=datetime.now())
-    title = db.Column(db.Text())
-    tag = db.Column(db.String(20))
-    content = db.Column(db.Text())
+    create_at = db.Column(db.DateTime, default=datetime.now())
+    title = db.Column(db.Text, nullable=False)
+    tag = db.Column(db.String(20), nullable=False)
+    content = db.Column(db.Text, nullable=False)
 
 
 @app.route('/error')
